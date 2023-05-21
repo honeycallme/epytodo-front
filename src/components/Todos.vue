@@ -12,6 +12,7 @@
           type="text"
           placeholder="Type a Todo . . ."
           v-model="newTodo"
+          @keyup.enter="addTodo()"
         />
         <button
           class="w-full lg:w-1/5 cursor-pointer rounded-r-2xl bg-black text-white font-bold py-3 px-8"
