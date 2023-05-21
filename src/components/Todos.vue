@@ -24,17 +24,18 @@
     </div>
     <ul class="w-full px-14 lg:px-56">
       <li
-        class="bg-white rounded-2xl w-full py-3 pl-6 pr-9 my-4 font-bold text-xl relative"
-        v-for="(index, Todo) in Todos"
-        :key="Todo.id"
+        class="rounded-2xl w-full py-3 pl-6 pr-9 my-4 font-bold text-xl relative"
+        :class="{'bg-green-200': todo.completed, 'bg-white': !todo.completed}"
+        v-for="(todo, index) in Todos"
+        :key="todo.id"
       >
-        {{ index }}
+        {{ todo.text }}
 
         <div class="absolute right-3 top-2 mt-2 px-3">
           <box-icon
             type="solid"
             class="cursor-pointer mr-3"
-            @click="removeTodo(index)"
+            @click="completeTodo(index)"
             name="check-circle"
             color="green"
             with="36"
@@ -55,12 +56,12 @@
 import "boxicons";
 
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
+// eslint-disable-next-line vue/multi-word-component-names
   name: "Todos",
   data() {
     return {
       newTodo: "",
-      Todos: ["First Todo . . ."],
+      Todos: [{ text: "First Todo . . .", completed: false }],
     };
   },
   methods: {
@@ -68,13 +69,17 @@ export default {
       if (this.newTodo == "") {
         this.newTodo = "use vim ...";
       } else {
-        this.Todos.push(this.newTodo);
+        this.Todos.push({ text: this.newTodo, completed: false });
         localStorage.setItem("Todos", JSON.stringify(this.Todos));
         this.newTodo = "";
       }
     },
     removeTodo(index) {
       this.Todos.splice(index, 1);
+      localStorage.setItem("Todos", JSON.stringify(this.Todos));
+    },
+    completeTodo(index) {
+      this.Todos[index].completed = !this.Todos[index].completed;
       localStorage.setItem("Todos", JSON.stringify(this.Todos));
     },
   },
