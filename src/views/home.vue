@@ -7,6 +7,8 @@
     </div>
     <h1 class="text-5xl font-bold">Epytodo</h1>
     <p class="text-2xl font-semibold">A colaborative web project !</p>
+
+    <p class="mt-4">made with love by fanga and mathis !</p>
 </div>
 
 </template>

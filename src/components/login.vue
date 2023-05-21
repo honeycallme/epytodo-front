@@ -27,13 +27,13 @@
       </div>
       <div class="flex items-center justify-between">
         <button
-          class="inline-block align-baseline font-bold text-sm text-indigo-500 hover:text-blue-800"
+          class="inline-block align-baseline font-bold text-sm text-black hover:text-blue-800"
           type="button"
           @click="login"
         >
           Login
         </button>
-        <RouterLink class="bg-indigo-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" to="/register">
+        <RouterLink class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" to="/register">
           Register
         </RouterLink>
       </div>

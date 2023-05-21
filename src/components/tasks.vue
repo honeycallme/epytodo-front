@@ -5,7 +5,7 @@
     <div
       class="topContainer w-full sticky top-0 left-0 z-10 text-center bg-indigo-200 pt-20 pb-3"
     >
-      <h1 class="font-bold text-7xl text-black">Epytodo</h1>
+      <h1 class="font-bold text-7xl text-black">Todo List</h1>
       <div class="input my-12 w-full px-14 lg:px-56 flex flex-wrap">
         <input
           class="w-full lg:w-4/5 rounded-l-2xl py-4 px-7 outline-none border-none"
